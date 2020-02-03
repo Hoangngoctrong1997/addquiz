@@ -1,0 +1,46 @@
+<!-- Section quiz -->
+<div id="section-${section_id}" data-id="${section_id}" class="panel panel-flat">
+  <div class="panel-heading">
+    <h5 class="panel-title">${section_name}</h5>
+    <div class="heading-elements">
+      <ul class="icons-list">
+        <li><a data-action="collapse"></a></li>
+        <li><a data-action="edit"></a></li>
+        <li><a data-action="close"></a></li>
+        <li><a data-action="move"></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    {{html section_description }}
+
+    <ul class="media-list media-list-bordered questions-list">
+      <li class="media form-add"></li>
+    </ul>
+  </div>
+  <div class="panel-footer">
+    <div class="heading-elements">
+      <form class="heading-form pull-right">
+        <div class="form-group has-feedback">
+          <input type="search" class="form-control"
+            placeholder="Add exists question...">
+          <div class="form-control-feedback">
+            <i class="icon-search4 text-size-base text-muted"></i>
+          </div>
+        </div>
+      </form>
+      <div class="pull-right">
+        <div class="btn-group add-more-question">
+          <button type="button" class="btn btn-primary btn-xs" data-type="true_false"><i
+              class="icon-plus3 position-left"></i> True/False</button>
+          <button type="button" class="btn btn-primary btn-xs" data-type="single_choice"><i
+              class="icon-plus3 position-left"></i> Single choice</button>
+          <button type="button" class="btn btn-primary btn-xs" data-type="multiple_choice"><i
+              class="icon-plus3 position-left"></i> Multiple choice</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Section quiz -->

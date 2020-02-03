@@ -1,0 +1,54 @@
+<!-- Quiz form -->
+<div class="panel panel-flat">
+  <div class="panel-heading">
+    <h5 class="panel-title">Quiz information</h5>
+    <div class="heading-elements">
+      <ul class="icons-list">
+        <li><a data-action="collapse"></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Title" value="${quiz_title}">
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <div id="quiz-description" contenteditable="true">
+        {{html quiz_description }}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Quiz form -->
+
+<div id="quiz-list-sections"></div>
+
+<div class="text-center">
+  <button type="button" id="add-more-section" class="btn btn-primary">
+    <i class="icon-plus3 position-left"></i> Add Section</button>
+</div>
+<br />
+
+<!-- Action quiz -->
+<div class="panel panel-flat">
+  <div class="panel-footer">
+    <div class="heading-elements">
+      <div class="btn-group pull-right">
+        <button type="button"
+          class="btn btn-primary btn-ladda btn-ladda-spinner ladda-button legitRipple"
+          data-style="expand-right" data-spinner-color="#333"
+          data-spinner-size="20">
+          <span class="ladda-label">Save <i
+              class="icon-arrow-right14 position-right"></i></span>
+          <span class="ladda-spinner"></span>
+        </button>
+        <a href="#" class="btn btn-default">Cancel</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Action quiz -->

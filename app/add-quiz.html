@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Quiz</title>
+
+  <!-- Global stylesheets -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
+    rel="stylesheet" type="text/css">
+  <link href="./assets/css/icons/icomoon/styles.css" rel="stylesheet"
+    type="text/css">
+  <link href="./assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="./assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="./assets/css/components.css" rel="stylesheet" type="text/css">
+  <link href="./assets/css/colors.css" rel="stylesheet" type="text/css">
+  <!-- /global stylesheets -->
+
+  <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
+
+  <!-- Core JS files -->
+  <script type="text/javascript" src="./assets/js/plugins/loaders/pace.min.js"></script>
+  <script type="text/javascript" src="./assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/js/core/libraries/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/ui/drilldown.js"></script>
+  <!-- /core JS files -->
+
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="./assets/js/plugins/forms/editable/editable.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/extensions/mockjax.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/forms/styling/switchery.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/forms/styling/uniform.min.js"></script>
+  <script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/velocity/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/buttons/spin.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/buttons/ladda.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/ui/moment/moment.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/pickers/daterangepicker.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/pickers/anytime.min.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/pickers/pickadate/picker.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+  <script type="text/javascript" src="./assets/js/plugins/pickers/pickadate/legacy.js"></script>
+
+  <script type="text/javascript" src="./assets/js/core/app.js"></script>
+  <script type="text/javascript" src="./assets/js/pages/components_buttons.js"></script>
+  <script type="text/javascript" src="./assets/js/pages/picker_date.js"></script>
+
+  <script type="text/javascript" src="./assets/js/plugins/ui/ripple.min.js"></script>
+  <!-- /theme JS files -->
+
+  <script type="text/javascript" src="./assets/js/pages/form_editable.js"></script>
+  <script type="text/javascript" src="./assets/js/app/add-quiz.js"></script>
+
+</head>
+<body>
+  <!-- Main navbar -->
+  <div class="navbar navbar-inverse bg-indigo">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html"><img
+          src="./assets/images/logo_light.png" alt=""></a>
+
+      <ul class="nav navbar-nav pull-right visible-xs-block">
+        <li><a data-toggle="collapse" data-target="#navbar-mobile"><i
+              class="icon-tree5"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">
+            <img src="./assets/images/image.png" alt="" height="25" class="img-circle">
+            <span>EZ quiz</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /main navbar -->
+
+  <!-- Page container -->
+  <div class="page-container">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+      <!-- Quiz form -->
+      <form class="form-horizontal" action="#">
+        <div class="panel panel-flat">
+          <div class="panel-heading">
+            <div class="heading-elements">
+              <form class="heading-form" action="#">
+              <div class="form-group">
+                <label class="checkbox-inline checkbox-switchery checkbox-right switchery-xs">
+                <input type="checkbox" class="switchery" checked="checked">
+                Enable editable:
+                </label>
+              </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="panel-heading">
+            <h5 class="panel-title">General information</h5>
+            <div class="heading-elements">
+              <ul class="icons-list">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="close"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Mã</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Thời gian làm bài</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Điểm tối thiểu</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Điểm tối đa</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Publish type:</label>
+
+                  <label class="radio-inline">
+                    <input type="radio" name="publish_type" class="styled" checked="checked">
+                    Publish
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="publish_type" class="styled">
+                    Private
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="publish_type" class="styled">
+                    Share
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Display time picker: </label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                    <input type="text" class="form-control pickadate">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- /Quiz form -->
+      <!-- Section quiz -->
+      <div class="panel-section">
+        <div class="panel panel-flat">
+          <div class="panel-heading">
+            <h5 class="panel-title">
+              <a href="#" id="text-field" data-type="text" data-inputclass="form-control" data-pk="1" data-title="Section label">Section label</a>
+            </h5>
+            <div class="heading-elements">
+              <ul class="icons-list">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="edit"></a></li>
+                <li><a data-action="close"></a></li>
+                <li><a data-action="move"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div contenteditable="true">
+              <p>Apollo 11
+            Saturn V carrying Apollo 11
+
+            Apollo 11 was the spaceflight that landed the first humans, Americans Neil Armstrong and Buzz Aldrin, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.
+
+            Armstrong spent about three and a half two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5 kg) of lunar material for return to Earth. A third member of the mission, Michael Collins, piloted the command spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for the trip back to Earth.!</p>
+            </div>
+
+            <ul class="media-list media-list-bordered">
+              <h6>Questions</h6>
+              <li class="media">
+                <div class="media-body">
+                  <div class="form-group">
+                    <label class="text-semibold">Neuroeconomics is a field of study which seeks to</label>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        A cause a change in how scientists understand brain chemistry.
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        understand how good decisions are made in the brain.
+                      </label>
+                    </div>
+
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        understand how the brain is linked to achievement in competitive fields.
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        trace the specific firing patterns of neurons in different areas of the brain.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <ul class="list-inline mt-5">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
+                </ul>
+              </li>
+              <li class="media">
+                <div class="media-body">
+                  <div class="form-group">
+                    <label class="text-semibold">According to the writer, iconoclasts are distinctive because</label>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        they create unusual brain circuits.
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        their brains function differently.
+                      </label>
+                    </div>
+
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        their personalities are distinctive.
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="question-one">
+                        they make decisions easily.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <ul class="list-inline mt-5">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer">
+            <div class="heading-elements">
+              <form class="heading-form pull-right" action="#">
+                <div class="form-group has-feedback">
+                  <input type="search" class="form-control" placeholder="Add exists question...">
+                  <div class="form-control-feedback">
+                    <i class="icon-search4 text-size-base text-muted"></i>
+                  </div>
+                </div>
+              </form>
+              <div class="pull-right">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary btn-xs"><i class="icon-plus3 position-left"></i> True/False</button>
+                  <button type="button" class="btn btn-primary btn-xs"><i class="icon-plus3 position-left"></i> Single choice</button>
+                  <button type="button" class="btn btn-primary btn-xs"><i class="icon-plus3 position-left"></i> Multiple choice</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Section quiz -->
+
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-add-section"><i class="icon-plus3 position-left"></i> Add more Section</button>
+      </div>
+      <br />
+
+      <!-- Action quiz -->
+      <div class="panel panel-flat">
+        <div class="panel-footer">
+          <div class="heading-elements">
+            <div class="btn-group pull-right">
+              <button type="button"
+                class="btn btn-primary btn-ladda btn-ladda-spinner ladda-button legitRipple"
+                data-style="expand-right" data-spinner-color="#333"
+                data-spinner-size="20">
+                <span class="ladda-label">Save <i class="icon-arrow-right14 position-right"></i></span>
+                <span class="ladda-spinner"></span>
+              </button>
+              <a href="#" class="btn btn-default">Cancel</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Action quiz -->
+    </div>
+  </div>
+  <template id="section-template">
+    <div class="panel panel-flat">
+      <div class="panel-heading">
+        <h5 class="panel-title">
+          <a href="#" class="input-editable" id="section-1" data-type="text" data-inputclass="form-control" data-pk="2" data-title="Section label">Section label</a>
+        </h5>
+        <div class="heading-elements">
+          <ul class="icons-list">
+            <li><a data-action="collapse"></a></li>
+            <li><a data-action="edit"></a></li>
+            <li><a data-action="close"></a></li>
+            <li><a data-action="move"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </template>
+</body>
+</html>

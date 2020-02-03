@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Quiz</title>
+
+  <!-- Global stylesheets -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
+    rel="stylesheet" type="text/css">
+  <link href="../../assets/css/icons/icomoon/styles.css" rel="stylesheet"
+    type="text/css">
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/components.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/colors.css" rel="stylesheet" type="text/css">
+  <!-- /global stylesheets -->
+
+  <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+  <!-- Core JS files -->
+  <script type="text/javascript" src="../../assets/js/plugins/loaders/pace.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/core/libraries/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/ui/drilldown.js"></script>
+  <!-- /core JS files -->
+
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="../../assets/js/plugins/forms/editable/editable.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/extensions/mockjax.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/forms/styling/switchery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/forms/styling/uniform.min.js"></script>
+  <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/velocity/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/buttons/spin.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/buttons/ladda.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/ui/moment/moment.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/pickers/daterangepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/pickers/anytime.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/pickers/pickadate/picker.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/pickers/pickadate/legacy.js"></script>
+  <script type="text/javascript" src="../../assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+
+  <script type="text/javascript" src="../../assets/js/core/app.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/forms/selects/select2.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/pages/form_select2.js"></script>
+  <script type="text/javascript" src="../../assets/js/pages/components_buttons.js"></script>
+  <script type="text/javascript" src="../../assets/js/pages/picker_date.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/uploaders/fileinput/fileinput.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/plugins/notifications/bootbox.min.js"></script>
+
+  <script type="text/javascript" src="../../assets/js/plugins/ui/ripple.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/mustache.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/app/es-config.js"></script>
+  <script type="text/javascript" src="../../assets/js/tpl_questions.js"></script>
+  <script type="text/javascript" src="../../assets/js/component/questions.js"></script>
+  <script type="text/javascript" src="../../assets/js/component/questions_view.js"></script>
+  <script type="text/javascript" src="../../assets/js/component/sections.js"></script>
+  <script type="text/javascript" src="../../assets/js/component/answers.js"></script>
+  <script type="text/javascript" src="../../assets/js/component/answers_view.js"></script>
+  <!-- /theme JS files -->
+
+</head>
+<body>
+  <!-- Main navbar -->
+  <div class="navbar navbar-inverse bg-indigo">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html"><img
+          src="../../assets/images/logo_light.png" alt=""></a>
+
+      <ul class="nav navbar-nav pull-right visible-xs-block">
+        <li><a data-toggle="collapse" data-target="#navbar-mobile"><i
+              class="icon-tree5"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">
+            <img src="../../assets/images/image.png" alt="" height="25" class="img-circle">
+            <span>EZ quiz</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /main navbar -->
+
+  <!-- Page container -->
+  <div class="page-container">
+    <!-- Main sidebar -->
+    <div class="sidebar sidebar-main sidebar-default">
+      <div class="sidebar-fixed">
+        <div class="sidebar-content">
+
+          <!-- Title -->
+          <div class="category-title h6">
+            <span>Components</span>
+            <ul class="icons-list">
+              <li><a href="#"><i class="icon-gear"></i></a></li>
+            </ul>
+          </div>
+          <!-- /title -->
+
+
+          <!-- Search task -->
+          <div class="sidebar-category">
+            <div class="category-title">
+              <span>Search task</span>
+              <ul class="icons-list">
+                <li><a href="#" data-action="collapse"></a></li>
+              </ul>
+            </div>
+
+            <div class="category-content">
+              <form action="#">
+                <div class="has-feedback has-feedback-left">
+                  <input type="search" class="form-control" placeholder="Type and hit Enter">
+                  <div class="form-control-feedback">
+                    <i class="icon-search4 text-size-base text-muted"></i>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- /search task -->
+
+
+          <!-- Action buttons -->
+          <div class="sidebar-category">
+            <div class="category-title">
+              <span>Action buttons</span>
+              <ul class="icons-list">
+                <li><a href="#" data-action="collapse"></a></li>
+              </ul>
+            </div>
+
+            <div class="category-content">
+              <div class="row">
+                <div class="col-xs-6">
+                  <button class="btn bg-teal-400 btn-block btn-float btn-float-lg" type="button"><i class="icon-git-branch"></i> <span>Branch</span></button>
+                  <button class="btn bg-purple-300 btn-block btn-float btn-float-lg" type="button"><i class="icon-mail-read"></i> <span>Messages</span></button>
+                </div>
+
+                <div class="col-xs-6">
+                  <button class="btn bg-warning-400 btn-block btn-float btn-float-lg" type="button"><i class="icon-stats-bars"></i> <span>Statistics</span></button>
+                  <button class="btn bg-blue btn-block btn-float btn-float-lg" type="button"><i class="icon-people"></i> <span>Users</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /action buttons -->
+
+
+          <!-- Task navigation -->
+          <div class="sidebar-category sidebar-category-visible">
+            <div class="category-title">
+              <span>Navigation</span>
+              <ul class="icons-list">
+                <li><a href="#" data-action="collapse"></a></li>
+              </ul>
+            </div>
+
+            <div class="category-content no-padding">
+              <ul class="navigation navigation-main navigation-accordion">
+                <li class="navigation-header"><span>Actions</span> <i class="icon-menu" title="Actions"></i></li>
+                <li><a href="#"><i class="icon-googleplus5"></i> <span>Create task</span></a></li>
+                <li><a href="#"><i class="icon-portfolio"></i> <span>Create project</span></a></li>
+                <li><a href="#"><i class="icon-compose"></i> <span>Edit task list</span></a></li>
+                <li><a href="#"><i class="icon-user-plus"></i> <span>Assign users <span class="label label-success">94 online</span></span></a></li>
+                <li><a href="#"><i class="icon-collaboration"></i> <span>Create team</span></a></li>
+                <li class="navigation-header"><span>Tasks</span> <i class="icon-menu" title="Tasks"></i></li>
+                <li><a href="#"><i class="icon-files-empty"></i> <span>All tasks</span></a></li>
+                <li><a href="#"><i class="icon-file-plus"></i> <span>Active tasks <span class="badge badge-default">28</span></span></a></li>
+                <li><a href="#"><i class="icon-file-check"></i> <span>Closed tasks</span></a></li>
+                <li class="navigation-divider"></li>
+                <li><a href="#"><i class="icon-reading"></i> <span>Assigned to me <span class="badge badge-info">86</span></span></a></li>
+                <li><a href="#"><i class="icon-make-group"></i> <span>Assigned to my team <span class="badge badge-info">47</span></span></a></li>
+                <li><a href="#"><i class="icon-cog3"></i> <span>Settings</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /task navigation -->
+
+
+          <!-- Assigned users -->
+          <div class="sidebar-category">
+            <div class="category-title">
+              <span>Assigned users</span>
+              <ul class="icons-list">
+                <li><a href="#" data-action="collapse"></a></li>
+              </ul>
+            </div>
+
+            <div class="category-content">
+              <ul class="media-list">
+                <li class="media">
+                  <a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+                  <div class="media-body">
+                    <a href="#" class="media-heading text-semibold">James Alexander</a>
+                    <span class="text-size-mini text-muted display-block">Santa Ana, CA.</span>
+                  </div>
+                  <div class="media-right media-middle">
+                    <span class="status-mark bg-success"></span>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+                  <div class="media-body">
+                    <a href="#" class="media-heading text-semibold">Jeremy Victorino</a>
+                    <span class="text-size-mini text-muted display-block">Dowagiac, MI.</span>
+                  </div>
+                  <div class="media-right media-middle">
+                    <span class="status-mark bg-danger"></span>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+                  <div class="media-body">
+                    <a href="#" class="media-heading text-semibold">Margo Baker</a>
+                    <span class="text-size-mini text-muted display-block">Kasaan, AK.</span>
+                  </div>
+                  <div class="media-right media-middle">
+                    <span class="status-mark bg-success"></span>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+                  <div class="media-body">
+                    <a href="#" class="media-heading text-semibold">Beatrix Diaz</a>
+                    <span class="text-size-mini text-muted display-block">Neenah, WI.</span>
+                  </div>
+                  <div class="media-right media-middle">
+                    <span class="status-mark bg-warning"></span>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+                  <div class="media-body">
+                    <a href="#" class="media-heading text-semibold">Richard Vango</a>
+                    <span class="text-size-mini text-muted display-block">Grapevine, TX.</span>
+                  </div>
+                  <div class="media-right media-middle">
+                    <span class="status-mark bg-grey-400"></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /assigned users -->
+
+          <!-- Revisions -->
+          <div class="sidebar-category">
+            <div class="category-title">
+              <span>Revisions</span>
+              <ul class="icons-list">
+                <li><a href="#" data-action="collapse"></a></li>
+              </ul>
+            </div>
+
+            <div class="category-content">
+              <ul class="media-list">
+                <li class="media">
+                  <div class="media-left">
+                    <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                  </div>
+
+                  <div class="media-body">
+                    Drop the IE <a href="#">specific hacks</a> for temporal inputs
+                    <div class="media-annotation">4 minutes ago</div>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <div class="media-left">
+                    <a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
+                  </div>
+
+                  <div class="media-body">
+                    Add full font overrides for popovers and tooltips
+                    <div class="media-annotation">36 minutes ago</div>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <div class="media-left">
+                    <a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
+                  </div>
+
+                  <div class="media-body">
+                    <a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
+                    <div class="media-annotation">2 hours ago</div>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <div class="media-left">
+                    <a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
+                  </div>
+
+                  <div class="media-body">
+                    <a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
+                    <div class="media-annotation">Dec 18, 18:36</div>
+                  </div>
+                </li>
+
+                <li class="media">
+                  <div class="media-left">
+                    <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                  </div>
+
+                  <div class="media-body">
+                    Have Carousel ignore keyboard events
+                    <div class="media-annotation">Dec 12, 05:46</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /revisions -->
+
+
+          <!-- Completeness stats -->
+          <div class="sidebar-category">
+            <div class="category-title">
+              <span>Completeness stats</span>
+              <ul class="icons-list">
+                <li><a href="#" data-action="collapse"></a></li>
+              </ul>
+            </div>
+
+            <div class="category-content">
+              <ul class="progress-list">
+                      <li>
+                          <label>Highest priority <span>80%</span></label>
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-danger" style="width: 80%">
+                      <span class="sr-only">80% Complete</span>
+                    </div>
+                  </div>
+                      </li>
+                      <li>
+                          <label>High priority <span>70%</span></label>
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-info" style="width: 70%">
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                  </div>
+                      </li>
+                      <li>
+                          <label>Normal priority <span>50%</span></label>
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-primary" style="width: 50%">
+                      <span class="sr-only">50% Complete</span>
+                    </div>
+                  </div>
+                      </li>
+                      <li>
+                          <label>Low prioruty <span>60%</span></label>
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-success" style="width: 60%">
+                      <span class="sr-only">60% Complete</span>
+                    </div>
+                  </div>
+                      </li>
+                  </ul>
+            </div>
+          </div>
+          <!-- /completeness stats -->
+
+        </div>
+      </div>
+    </div>
+      <!-- /main sidebar -->
+    <!-- Main content -->
+    <div class="content-wrapper">
+      <!-- Quiz form -->
+
+      <div class="panel panel-flat">
+        <div class="panel-heading">
+          <ul class="breadcrumb breadcrumb-caret">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Quản lý bài kiểm tra</a></li>
+            <li class="active">Thêm mới bài kiểm tra </li>
+          </ul>
+
+          <h5 class="panel-title">
+            <a class="text-field" href="#" data-type="text" data-inputclass="form-control" data-pk="1" data-title="Tên bài kiểm tra">Bài kiểm tra cuối kỳ</a>
+          </h5>
+
+          <div class="heading-elements">
+            <div class="heading-elements">
+              <ul class="icons-list">
+                <a id="button_help" href="#" class="btn btn-link btn-float has-text text-size-small"><i class="icon-question3 text-indigo-400"></i></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-horizontal">
+          <div class="panel-body">
+            <div class="row help_content hidden" style="display: block;">
+              <div class="alert alert-info alert-styled-left alert-arrow-left alert-component content-group-lg">
+                <button type="button" class="close button_hide_help"><span>×</span><span class="sr-only">Close</span></button>
+                <h6 class="alert-heading text-semibold">Instruction</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id enim non turpis condimentum dictum at eu nisl. Maecenas sit amet magna massa. Aenean sodales finibus orci, sed tincidunt lacus porta et. In congue sollicitudin quam id egestas. Pellentesque sagittis rutrum ipsum, non ornare arcu iaculis a. In hac habitasse platea dictumst. Aenean tincidunt mollis ligula, nec euismod nulla interdum eu. Donec porta sagittis augue quis fermentum. Nam ut nisl id magna vehicula porttitor sed vel lectus. Aenean consequat est neque, et facilisis eros euismod eu. Morbi condimentum ultricies scelerisque. Sed lobortis molestie leo vel dictum. Integer aliquam, justo gravida venenatis posuere, lacus lorem faucibus orci, in semper felis odio nec nibh. Nunc egestas molestie libero. Duis bibendum maximus leo, maximus lobortis urna pulvinar sit amet. Praesent non vulputate diam. </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Mã</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Thời gian làm bài</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Điểm tối thiểu</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Điểm tối đa</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Publish type:</label>
+
+                  <label class="radio-inline">
+                    <input type="radio" name="publish_type" class="styled" checked="checked">
+                    Publish
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="publish_type" class="styled">
+                    Private
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="publish_type" class="styled">
+                    Share
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-lg-2">Display time picker: </label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                    <input type="text" class="form-control pickadate">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="text-left">
+                  <button type="button" data-number="1" class="btn btn-primary btn-add-section"><i class="icon-plus3 position-left"></i> Add more Section</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /Quiz form -->
+
+      <!-- Section quiz -->
+      <div class="panel-section">
+      </div>
+      <!-- /Section quiz -->
+      <br />
+
+      <!-- Action quiz -->
+      <div class="panel panel-flat">
+        <div class="panel-footer">
+          <div class="heading-elements">
+            <div class="btn-group pull-right">
+              <button type="button"
+                class="btn btn-primary btn-ladda btn-ladda-spinner ladda-button legitRipple"
+                data-style="expand-right" data-spinner-color="#333"
+                data-spinner-size="20">
+                <span class="ladda-label">Save <i class="icon-arrow-right14 position-right"></i></span>
+                <span class="ladda-spinner"></span>
+              </button>
+              <a href="#" class="btn btn-default">Cancel</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Action quiz -->
+    </div>
+  </div>
+  <script type="text/javascript" src="../../assets/js/app/add-quiz.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.icons-list a[data-action="edit"]:after {
+  content: '\e90e';
+  font-size: 12px;
+}
+
+.sortable_placeholder_questions{
+  background-color: #fafafa;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.sortable_questions .media{
+  background: white;
+  padding: 0 10px;
+}
